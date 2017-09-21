@@ -36,10 +36,10 @@ class action {
 
         this.db.transaction(function (tx) {
             tx.executeSql(sql, null, function (tx, rs) {
-                console.log(sql + '\r\n执行sql成功');
-            }, function (tx, rs) {
-                debugger
-                console.log(sql + '\r\n出错');
+                console.log(sql + '执行sql成功,影响行数:' + rs.rows.length);
+                console.log(JSON.stringify(Array.from(rs.rows)))
+            }, function (tx, err) { 
+                console.log(sql + '出错:' + err.message);
             });
         });
 

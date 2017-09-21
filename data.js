@@ -20,7 +20,7 @@ export function getMeta() {
 			name: 'sql',
 			component: 'Input',
 			type: 'textarea',
-			autosize: { minRows: 20, maxRows: 100 },
+			autosize: { minRows: 5, maxRows: 30 },
 			onChange: "{{(e)=>$fieldChange('data.sql', e.target.value)}}",
 			value: '{{data.sql}}'
 		}, {
